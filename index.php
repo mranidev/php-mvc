@@ -10,4 +10,6 @@ $app->router->get('/', function() {
     return 'callback return!';
 });
 
+$app->router->get('/', 'home');
+
 $app->run();

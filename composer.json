@@ -1,0 +1,17 @@
+{
+    "name": "mranidev/php-mvc",
+    "description": "php mvc from scratch",
+    "authors": [
+        {
+            "name": "Mrani Dev",
+            "email": "mranidev@proton.me"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "./"
+        }
+    }
+}

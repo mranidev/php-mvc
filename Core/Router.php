@@ -42,14 +42,14 @@ class Router
     public function renderView($view)
     {
         ob_start();
-        require_once __DIR__ . "/../views/$view.php";
+        require_once Application::$dir . "/views/$view.php";
         return ob_get_clean();
     }
 
     public function renderLayout()
     {
         ob_start();
-        require_once __DIR__ . "/../views/layouts/app.php";
+        require_once Application::$dir . "/views/layouts/app.php";
         return ob_get_clean();
     }
 

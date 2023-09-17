@@ -7,16 +7,19 @@ class Router
     public array $routes = [];
     public Request $request;
     public Response $response;
+
     
     public function __construct(Request $request, Response $response) 
     {
         $this->request = $request;
         $this->response = $response;
     }
+
     public function get($path, $callback)
     {
         return $this->routes['get'][$path] = $callback;
     }
+    
 
     public function resolve()
     {

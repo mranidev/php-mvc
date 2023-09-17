@@ -10,6 +10,7 @@ class Application
     public static string $dir;
     public static Application $app;
     public Controller $controller;
+
     public function __construct($dir)
     {
         $this->controller = new Controller();
@@ -20,6 +21,7 @@ class Application
         $this->router = new Router($this->request, $this->response);
         
     }
+    
     public function run() 
     {
         print $this->router->resolve();

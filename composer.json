@@ -4,8 +4,8 @@
     "authors": [
         {
             "name": "Amine EL ALAOUI MRANI",
-            "mail": "mranidev@proton.me",
-            "site": "mrani.dev"
+            "email": "mranidev@proton.me",
+            "website": "mrani.dev"
         }
     ],
     "minimum-stability": "beta",

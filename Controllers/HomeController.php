@@ -8,6 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return $this->render('home');
+        $vars = [
+            'title' => 'awesome MVC'
+        ];
+
+        return $this->render('home', $vars);
     }
 }

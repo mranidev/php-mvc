@@ -4,8 +4,8 @@ namespace App\Core;
 
 class Controller
 {
-    public function render($view)
+    public function render($view, $vars = [])
     {
-        return Application::$app->router->renderContent($view);
+        return Application::$app->router->renderContent($view, $vars);
     }
 }

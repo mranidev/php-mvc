@@ -44,8 +44,13 @@ class Router
         return call_user_func($callback);
     }
 
-    public function renderView($view)
+    public function renderView($view, $vars = [])
     {
+        foreach($vars as $var => $val)
+        {
+            $$var = $val;
+        }
+        
         ob_start();
         require_once Application::$dir . "/views/$view.php";
         return ob_get_clean();
@@ -58,10 +63,10 @@ class Router
         return ob_get_clean();
     }
 
-    public function renderContent($view): string
+    public function renderContent($view, $vars = []): string
     {
         $layoutContent = $this->renderLayout();
-        $viewContent = $this->renderView($view);
+        $viewContent = $this->renderView($view, $vars);
 
         return str_replace('{content}', $viewContent, $layoutContent);
     }

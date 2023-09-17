@@ -38,7 +38,8 @@ class Router
 
         if (is_array($callback))
         {
-            $callback[0] = new $callback[0]();
+            Application::$app->controller = new $callback[0]();
+            $callback[0] = Application::$app->controller;
         }
         
         return call_user_func($callback);
@@ -50,7 +51,7 @@ class Router
         {
             $$var = $val;
         }
-        
+
         ob_start();
         require_once Application::$dir . "/views/$view.php";
         return ob_get_clean();
@@ -58,8 +59,9 @@ class Router
 
     public function renderLayout()
     {
+        $layout = Application::$app->controller->layout;
         ob_start();
-        require_once Application::$dir . "/views/layouts/app.php";
+        require_once Application::$dir . "/views/layouts/$layout.php";
         return ob_get_clean();
     }
 

@@ -8,14 +8,18 @@ class Router
     public Request $request;
     public Response $response;
 
-    
-    public function __construct(Request $request, Response $response) 
+
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
         $this->response = $response;
     }
-
-    public function get($path, $callback)
+    /**
+     * @param string $path
+     * @param callable $callback
+     * @return void
+     */
+    public function get(string $path, callable $callback): callable
     {
         return $this->routes['get'][$path] = $callback;
     }
@@ -24,7 +28,7 @@ class Router
     {
         return $this->routes['post'][$path] = $callback;
     }
-    
+
 
     public function resolve()
     {
@@ -32,7 +36,7 @@ class Router
         $method = $this->request->getMethod();
 
         $callback = $this->routes[$method][$path] ?? false;
-        
+
         if (!$callback)
         {
             $this->response->setStatusCode(404);
@@ -43,13 +47,15 @@ class Router
         {
             return $this->renderContent($callback);
         }
-
+        // If the callback is an array, it means it's a controller and method
         if (is_array($callback))
         {
+            // If the first element of the array is a string, it means it's a controller class name
             Application::$app->controller = new $callback[0]();
+            // Replace the first element of the array with the controller instance
             $callback[0] = Application::$app->controller;
         }
-        
+
         return call_user_func($callback, $this->request);
     }
 

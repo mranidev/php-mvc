@@ -43,4 +43,7 @@ The framework provides a clean structure for building scalable PHP applications 
 Clone the repository:
 
 ```bash
-git clone https://github.com/thecodeholic/php-m...
+git clone https://github.com/thecodeholic/tc-php-mvc-core
+git clone https://github.com/thecodeholic/php-mvc-framework
+
+```

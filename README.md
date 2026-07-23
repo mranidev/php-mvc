@@ -5,3 +5,5 @@ PHP/MVC Framework
 
 
 [![Watch the video]("https://www.youtube.com/embed/WKy-N0q3WRo?si=ubSWuTZ3yKfjPiG0)](https://youtube.com)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/https://www.youtube.com/embed/WKy-N0q3WRo?si=ubSWuTZ3yKfjPiG0/0.jpg)](https://www.youtube.com/embed/WKy-N0q3WRo?si=ubSWuTZ3yKfjPiG0)

@@ -10,7 +10,8 @@ This project demonstrates how to build a reusable PHP framework architecture wit
 
 You can find the complete source code here:
 
-🔗 https://github.com/thecodeholic/php-m...
+🔗 https://github.com/thecodeholic/tc-php-mvc-core
+🔗 https://github.com/thecodeholic/php-mvc-framework
 
 ## 🚀 Features
 
